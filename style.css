@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  line-height: 1.1;
+  box-sizing: border-box;
+  /* outline: 1px solid black; */
+}
+
+:root {
+  --font-main: 'Montserrat', sans-serif;
+  --font-game: 'Press Start 2P', cursive;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f8ecec;
+}
+
+header h1 {
+  font-family: var(--font-game);
+  font-size: 140%;
+}
+
+.container {
+  padding: .5em 3em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background-color: #593984;
+  color: #f3ecf3;
+}
+
+#logo {
+  height: 100%;
+  object-fit: cover;
+}
+
+input[type='text'] {
+  padding: .5em 0 .5em .5em;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#search {
+  padding: .5em;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#search, input[type='text'] {
+  background-color: #dfd9d9;
+}
+
+main {
+  padding-top: 3rem;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.pokemon {
+  display: grid;
+  /* display: none; */
+  height: 500px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  /* border-radius: 5px; */
+  background-color: white;
+}
+
+.pokemonCard {
+  background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(250, 209, 2, 0.806)),
+  url("/assets/bg.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  color: white;
+  font-family: var(--font-game);
+  justify-content: center;
+  gap: 1em;
+  padding: 2em;
+}
+
+.pokemonDex {
+  padding: 2em;
+}
+.pokemonImage {
+  background: url('assets/gg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1.5em;
+}
+
+.pokemonImage img {
+  border-radius: 10px;
+  height: 150%;
+  object-fit: contain;
+}
+
+.pokemonDex {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+}
