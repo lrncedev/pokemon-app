@@ -1,4 +1,4 @@
-const initalList = 1;
+const initalList = 12;
 
 const fetchPokemon = async () => {
   for (let i = 1; i <= initalList; i++){
