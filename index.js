@@ -17,6 +17,8 @@ const getPokemon = async id => {
 
 function createPokemonCard(pokemon) {
   const cardEl = document.createElement('div');
+  const mainContainer = document.querySelector('main');
+  mainContainer.style.display = 'grid';
   cardEl.classList.add('card');
   const results = `
     <div class="card-img">
@@ -35,12 +37,13 @@ document.querySelector('#search').addEventListener('click', searchPokemon);
 
 function searchPokemon(e) {
   const pokemonName = document.querySelector('#pokemonName').value;
+
   // console.log(name);
   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
   .then((response) => response.json())
   .then((pokemon) => {
     pokemonContainer.innerHTML = `
-    <div class='card'>
+    <div class='single'>
       <div class="card-img">
         <img class='card-actual-img' src="${pokemon.sprites.front_default}" alt="Card image..">
       </div>

@@ -15,6 +15,17 @@
 }
 
 
+body {
+  background: url('https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/sword-shield/pokemon-in-the-wild.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  object-fit: contain;
+  background-color: black;
+  background-position: left;
+
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -60,35 +71,52 @@ input[type='text'] {
 }
 
 main {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
-  display: grid;
+  /* display: grid; */
+  /* background: url(); */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  padding-top: 2em;
+  padding: 2em 0;
+  /* height: (100vh -58px); */
 }
 
 .card {
-  border-radius: 10px;
+  /* border-radius: 10px;
   background-color: #fff;
   padding: 1em;
-  background-color: black;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  display: flex;
+  flex-direction: column;
+  /* height: 300px; */
+  /* gap: 1em; */
+  /* padding: .5em; */
+  border: 5px solid black;
+  transition: scale 1s;
+  /* border-radius: 10px; */
 }
 
 .card > * { 
-  outline: 10px solid black;
+  /* outline: 10px solid black; */
+  flex-basis: 100%;
 }
 .card-img {
-  background-color: rgb(240, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
 .card-actual-img {
   width: 100%;
+  animation-name: beat;
+  animation-duration: 2s;
   transition-timing-function: ease-in;
-  transition: scale 1s;
+  animation-iteration-count: infinite;
 }
 
+/* @keyframes beat {
+  from {scale: .9}
+  to {scale: 1.15}
+} */
 .card-description {
   font-family: var(--font-main);
   display: flex;
@@ -102,14 +130,34 @@ main {
   font-size: 1.5em;
   text-align: center;
 }
-.card-actual-img:hover {
-  scale: 1.15;
+.card:hover {
+  scale: 1.05;
+}
+
+.single {
+  display: flex;
+  width: 100%;
+}
+
+.single > * { 
+  /* outline: 10px solid black; */
+  flex-basis: 100%;
 }
 @media screen and (min-width: 35em) {
   header {
     flex-direction: row;
   }
-  main {
+  /* main {
     width: 70%;
-  }
+  } */
+
+  /* .card {
+    flex-direction: row;
+  } */
+}
+
+@media screen and (max-width: 35em) {
+  /* .card {
+    flex-direction: row;
+  } */
 }
